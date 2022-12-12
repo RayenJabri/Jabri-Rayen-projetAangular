@@ -1,0 +1,38 @@
+<div class="container">
+    <div>
+    <h2>Ajouter un Programme :</h2>
+    </div>
+    <form >
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID Programme</label>
+        <input type="text" [(ngModel)]="newProgramme.idProgramme" name="idProgramme" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Programme</label>
+        <input type="text"[(ngModel)]= "newProgramme.nomProgramme"
+        name="nomProduit" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Nom devllopper</label>
+        <input type="text" [(ngModel)]= "newProgramme.nomDev"
+        name="nomDev" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date création</label>
+        <input type="date" [(ngModel)]= "newProgramme.dateCreation"
+        name="dateCreation" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Genre</label>
+            <select class="form-control form-control-lg" id="idGenre" name="idGenre"[(ngModel)]="newIdGenre">
+            <option *ngFor="let genre of genre" [value]="genre.idGenre" >
+            {{genre.nomGenre}}
+            </option>
+            </select>
+            </div>
+        <div class="mt-2">
+        <button type="submit" (click)="addProgramme()"class="btn btn-success">Ajouter</button>
+        </div>
+        </form>
+        
+        </div>

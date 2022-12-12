@@ -1,0 +1,44 @@
+<div class="container">
+    <div>
+    <h2>Modifier un Programme :</h2>
+    </div>
+    <form >
+    
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID Programme</label>
+        <input readonly type="text" [(ngModel)]="currentProgramme.idProgramme"
+        name="idProgramme" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Proprogramme</label>
+    <input type="text"[(ngModel)]= "currentProgramme.nomProgramme"
+    name="nomProprogramme" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Nom Devloppeur</label>
+    <input type="text" [(ngModel)]= "currentProgramme.nomDev"
+    name="nomDev" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date création</label>
+
+<input type="date" [ngModel]="currentProgramme.dateCreation | date: 'yyyy-MM-dd'"(ngModelChange)="currentProgramme.dateCreation= $event" name="dateCreation"class="form-control">
+</div>
+<div class="mt-2">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <select class="form-control form-control-lg" id="idGenre" name="idGenre"[(ngModel)]="newId">
+        <option *ngFor="let genre of genre" [value]="genre.idGenre" >
+                        {{genre.nomGenre}}
+        </option>
+        </select>
+        </div>
+         <div>
+        <div class="mt-2"></div>
+        <button type="submit" (click)="updateProgramme()" class="btn btn-success">udpate</button>
+     </div>
+    </div>
+     </form>
+     </div>
+
+
+
